@@ -152,14 +152,40 @@
         .hero-image {
             position: relative;
             text-align: center;
+            min-height: 400px;
+            background: url('https://avvietnam.com/wp-content/uploads/2022/11/Exhibition-3.jpg') center/cover no-repeat;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(173, 217, 41, 0.2);
+            border: 2px solid rgba(173, 217, 41, 0.3);
         }
 
         .hero-image::before {
-            content: '📊';
-            font-size: 15rem;
-            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(173, 217, 41, 0.1) 0%, rgba(46, 55, 63, 0.3) 100%);
             animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px rgba(173, 217, 41, 0.3));
+        }
+
+        .hero-image::after {
+            content: '🎪 Exhibition & Events';
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(46, 55, 63, 0.9);
+            color: #add929;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(173, 217, 41, 0.3);
         }
 
         .cta-buttons {
