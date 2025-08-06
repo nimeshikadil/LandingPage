@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventPro - Premium Event Management</title>
+    <title>CrowdSnap - AI-Powered Event Management Platform</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,9 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2e373f;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2e373f 50%, #1a1a1a 100%);
+            overflow-x: hidden;
         }
 
         .container {
@@ -26,14 +28,16 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(46, 55, 63, 0.95) 0%, rgba(173, 217, 41, 0.1) 100%);
+            backdrop-filter: blur(10px);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(173, 217, 41, 0.2);
+            border-bottom: 1px solid rgba(173, 217, 41, 0.3);
         }
 
         nav {
@@ -43,8 +47,12 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
+            background: linear-gradient(45deg, #add929, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(173, 217, 41, 0.3);
         }
 
         .nav-links {
@@ -56,11 +64,28 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
+            position: relative;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            color: #add929;
+            text-shadow: 0 0 10px rgba(173, 217, 41, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #add929, #ffffff);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .mobile-menu {
@@ -72,179 +97,282 @@
         .mobile-menu span {
             width: 25px;
             height: 3px;
-            background: white;
+            background: linear-gradient(45deg, #add929, #ffffff);
             margin: 3px 0;
             transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f2f5" width="1200" height="600"/><circle fill="%23667eea" cx="200" cy="150" r="80" opacity="0.3"/><circle fill="%23764ba2" cx="800" cy="300" r="120" opacity="0.2"/><circle fill="%23667eea" cx="1000" cy="100" r="60" opacity="0.4"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2e373f 50%, #1a1a1a 100%);
             height: 100vh;
             display: flex;
             align-items: center;
-            text-align: center;
-            color: white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(173, 217, 41, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(173, 217, 41, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 3rem;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
             margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #add929, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             animation: fadeInUp 1s ease-out;
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: #add929;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
 
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-image::before {
+            content: '📊';
+            font-size: 15rem;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(173, 217, 41, 0.3));
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
         .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
             padding: 15px 30px;
-            text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #add929, #ffffff);
+            color: #2e373f;
+            box-shadow: 0 10px 30px rgba(173, 217, 41, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: #add929;
+            border: 2px solid #add929;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 15px 40px rgba(173, 217, 41, 0.4);
         }
 
-        /* Services Section */
-        .services {
+        /* About Section */
+        .about {
             padding: 80px 0;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #2e373f 0%, #1a1a1a 100%);
+            color: white;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(173, 217, 41, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(173, 217, 41, 0.03) 0%, transparent 50%);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .service-icon {
             font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #667eea;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #ffffff, #add929);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
+        .about-content {
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* Features Section */
         .features {
             padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2e373f 100%);
+            position: relative;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
-        .feature {
-            text-align: center;
-            padding: 1rem;
+        .feature-card {
+            background: linear-gradient(135deg, rgba(46, 55, 63, 0.8) 0%, rgba(26, 26, 26, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(173, 217, 41, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .feature-number {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 50%;
-            line-height: 60px;
-            font-size: 1.5rem;
-            font-weight: bold;
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #add929, transparent);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(173, 217, 41, 0.2);
+            border-color: rgba(173, 217, 41, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
+            display: block;
         }
 
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #add929;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits {
             padding: 80px 0;
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            display: grid;
-            gap: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            background: linear-gradient(135deg, #2e373f 0%, #1a1a1a 100%);
             color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s;
         }
 
-        .contact-form button:hover {
-            transform: translateY(-2px);
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, rgba(173, 217, 41, 0.1) 0%, transparent 100%);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .benefit:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(173, 217, 41, 0.2) 0%, transparent 100%);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .benefit h3 {
+            color: #add929;
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2e373f 50%, #1a1a1a 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(173, 217, 41, 0.1) 0%, transparent 70%);
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #add929, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* Footer */
         footer {
-            background: #333;
-            color: white;
+            background: #1a1a1a;
+            color: rgba(255, 255, 255, 0.7);
             text-align: center;
             padding: 2rem 0;
+            border-top: 1px solid rgba(173, 217, 41, 0.2);
         }
 
         /* Animations */
@@ -256,6 +384,15 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
             }
         }
 
@@ -280,34 +417,82 @@
                 display: flex;
             }
 
-            .hero-content h1 {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-content p {
-                font-size: 1.1rem;
+            .hero-text .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-image::before {
+                font-size: 8rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .services-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Particle background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(173, 217, 41, 0.3);
+            border-radius: 50%;
+            animation: particle-float 6s infinite ease-in-out;
+        }
+
+        @keyframes particle-float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">EventPro</div>
+            <div class="logo">CrowdSnap</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#cta">Get Started</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMobileMenu()">
                 <span></span>
@@ -321,48 +506,29 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Create Unforgettable Events</h1>
-                <p>Professional event management services that bring your vision to life with precision and style</p>
-                <a href="#contact" class="cta-button">Get Started Today</a>
+                <div class="hero-text">
+                    <h1>A smarter way to run every event, start to finish.</h1>
+                    <p class="subtitle">AI-powered event management built for today's organizers.</p>
+                    <div class="cta-buttons">
+                        <a href="#cta" class="cta-button cta-primary">Try It Free</a>
+                        <a href="#about" class="cta-button cta-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title fade-in">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">🎪</div>
-                    <h3>Corporate Events</h3>
-                    <p>Professional corporate gatherings, conferences, and business meetings designed to impress and engage your audience.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">💒</div>
-                    <h3>Weddings</h3>
-                    <p>Make your special day perfect with our comprehensive wedding planning services, from venue selection to day-of coordination.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🎉</div>
-                    <h3>Private Parties</h3>
-                    <p>Celebrate life's moments with custom-designed private parties that reflect your personality and style.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🎭</div>
-                    <h3>Entertainment</h3>
-                    <p>Professional entertainment booking and coordination to ensure your guests have an unforgettable experience.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🍽️</div>
-                    <h3>Catering</h3>
-                    <p>Exquisite catering services with customizable menus to satisfy every palate and dietary requirement.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">📋</div>
-                    <h3>Full Planning</h3>
-                    <p>Complete event planning from concept to execution, handling every detail so you can enjoy your event stress-free.</p>
-                </div>
+            <h2 class="section-title fade-in">CrowdSnap – Your All in One Event Management Platform</h2>
+            <div class="about-content fade-in">
+                <p>CrowdSnap helps you manage every part of your event from registration to reporting—in one simple, powerful platform. No tech skills needed. No jumping between tools.</p>
+                <br>
+                <p><strong>Made for Event Organizers Like You</strong></p>
+                <p>Whether you're running a corporate event, seminar, expo, or workshop, CrowdSnap gives you the tools to stay organized, save time, and impress your attendees.</p>
             </div>
         </div>
     </section>
@@ -370,51 +536,94 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title fade-in">Why Choose EventPro?</h2>
+            <h2 class="section-title fade-in">What You Can Do with CrowdSnap</h2>
             <div class="features-grid">
-                <div class="feature fade-in">
-                    <div class="feature-number">1</div>
-                    <h3>Expert Planning</h3>
-                    <p>Over 10 years of experience in creating memorable events</p>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Manage Everything in One Place</h3>
+                    <p>Create forms, track attendees, manage sessions, and get reports all from one dashboard.</p>
                 </div>
-                <div class="feature fade-in">
-                    <div class="feature-number">2</div>
-                    <h3>Custom Solutions</h3>
-                    <p>Tailored event solutions to match your vision and budget</p>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3>See What's Happening Live</h3>
+                    <p>Real-time dashboards show check-ins, footfall, and engagement as your event unfolds.</p>
                 </div>
-                <div class="feature fade-in">
-                    <div class="feature-number">3</div>
-                    <h3>Full Service</h3>
-                    <p>Everything from planning to execution under one roof</p>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Save Time with Smart Automation</h3>
+                    <p>No more manual work. Let AI handle forms, reports, and more—fast and error-free.</p>
                 </div>
-                <div class="feature fade-in">
-                    <div class="feature-number">4</div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock support throughout your event planning journey</p>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Use Secure QR Codes & Blockchain</h3>
+                    <p>Track attendance and participation with secure, tamper-proof records.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📝</div>
+                    <h3>Create Dynamic Forms</h3>
+                    <p>Handle complex registrations easily with forms that adjust to your event needs.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎫</div>
+                    <h3>Print Custom ID Cards Instantly</h3>
+                    <p>Design and print branded QR-coded badges for every participant.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Stay Secure and Compliant</h3>
+                    <p>Your data is safe with us. CrowdSnap is fully GDPR and PDPA compliant.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p>Ready to plan your next event? Contact us today for a free consultation!</p>
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <input type="tel" id="phone" placeholder="Your Phone Number">
-                <textarea id="message" rows="5" placeholder="Tell us about your event..." required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <h2 class="section-title fade-in">Why Organizers Love CrowdSnap</h2>
+            <div class="benefits-grid">
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Super Easy to Use</h3>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">⏰</div>
+                    <h3>Saves Hours of Admin Work</h3>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Gives Clear, Real-time Insights</h3>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">🎪</div>
+                    <h3>Helps Run Events More Smoothly</h3>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">📏</div>
+                    <h3>Scales with Events of Any Size</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="cta" class="final-cta">
+        <div class="container">
+            <h2 class="fade-in">Make Your Next Event a Success</h2>
+            <p class="fade-in">Join the growing number of event organizers who trust CrowdSnap.<br>
+            Simplify your process. Engage better. Report smarter.</p>
+            <div class="cta-buttons fade-in">
+                <a href="#" class="cta-button cta-primary" onclick="handleCTA('free')">Try It Free</a>
+                <a href="#" class="cta-button cta-secondary" onclick="handleCTA('team')">Talk to Our Team</a>
+                <a href="#" class="cta-button cta-secondary" onclick="handleCTA('demo')">Book a Demo</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 EventPro. All rights reserved. | Creating unforgettable moments since 2014</p>
+            <p>&copy; 2024 CrowdSnap. All rights reserved. | AI-powered event management for the modern world</p>
         </div>
     </footer>
 
