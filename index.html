@@ -153,7 +153,13 @@
             position: relative;
             text-align: center;
             min-height: 400px;
-            background: url('https://avvietnam.com/wp-content/uploads/2022/11/Exhibition-3.jpg') center/cover no-repeat;
+            background: 
+                url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'),
+                url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'),
+                linear-gradient(135deg, #add929 0%, #2e373f 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(173, 217, 41, 0.2);
@@ -172,7 +178,7 @@
         }
 
         .hero-image::after {
-            content: '🎪 Exhibition & Events';
+            content: '🎪 Exhibition & Events Technology';
             position: absolute;
             bottom: 20px;
             left: 20px;
@@ -474,6 +480,35 @@
             }
         }
 
+        /* Exhibition Gallery */
+        .exhibition-showcase {
+            background: linear-gradient(135deg, rgba(173, 217, 41, 0.1) 0%, rgba(46, 55, 63, 0.8) 100%) !important;
+        }
+
+        .exhibition-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .exhibition-gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            filter: brightness(0.8);
+        }
+
+        .exhibition-gallery img:hover {
+            transform: scale(1.05);
+            filter: brightness(1);
+            box-shadow: 0 5px 20px rgba(173, 217, 41, 0.3);
+        }
+
         /* Particle background */
         .particles {
             position: fixed;
@@ -598,6 +633,14 @@
                     <div class="feature-icon">🔒</div>
                     <h3>Stay Secure and Compliant</h3>
                     <p>Your data is safe with us. CrowdSnap is fully GDPR and PDPA compliant.</p>
+                </div>
+                <div class="feature-card fade-in exhibition-showcase">
+                    <div class="exhibition-gallery">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Modern Exhibition Hall" />
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tech Conference" />
+                    </div>
+                    <h3>🏛️ Perfect for Exhibitions & Events</h3>
+                    <p>From tech conferences to trade shows, CrowdSnap handles events of all sizes with precision and style.</p>
                 </div>
             </div>
         </div>
