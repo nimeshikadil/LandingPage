@@ -1,0 +1,52 @@
+i want to create landing page using HTML and JavaScript only for the represent technology solution company for event industry. these are the content                                                                                                                                                       A smarter way to run every event, start to finish.
+AI-powered event management built for today’s organizers.                      right coner image related to exhibition  
+                                                                                                                                                                      CrowdSnap – Your All in One Event Management Platform
+CrowdSnap helps you manage every part of your event from registration to reporting—in one simple, powerful platform. No tech skills needed. No jumping between tools.
+
+Made for Event Organizers Like You
+Whether you're running a corporate event, seminar, expo, or workshop, CrowdSnap gives you the tools to stay organized, save time, and impress your attendees.
+
+ What You Can Do with CrowdSnap
+--Manage Everything in One Place
+Create forms, track attendees, manage sessions, and get reports all from one dashboard.
+
+-- See What’s Happening Live
+Real-time dashboards show check-ins, footfall, and engagement as your event unfolds.
+
+-- Save Time with Smart Automation
+No more manual work. Let AI handle forms, reports, and more—fast and error-free.
+
+-- Use Secure QR Codes & Blockchain
+Track attendance and participation with secure, tamper-proof records.
+
+-- Create Dynamic Forms
+Handle complex registrations easily with forms that adjust to your event needs.
+
+-- Print Custom ID Cards Instantly
+Design and print branded QR-coded badges for every participant.
+
+-- Stay Secure and Compliant
+Your data is safe with us. CrowdSnap is fully GDPR and PDPA compliant.
+
+ See CrowdSnap in Action
+Take a look at real images and dashboards from events already powered by CrowdSnap.
+
+
+
+ Why Organizers Love CrowdSnap
+Super easy to use
+
+Saves hours of admin work
+
+Gives clear, real-time insights
+
+Helps run events more smoothly
+
+Scales with events of any size
+
+ Make Your Next Event a Success
+Join the growing number of event organizers who trust CrowdSnap.
+Simplify your process. Engage better. Report smarter.
+
+  Try It Free   Talk to Our Team   Book a Demo                                                                                                                       use these colour palet '#add929 ,#2e373f ,white and black'   shold e more colourful ,use gradients,shades and less green colour , more modern look
+please use HTML and Javascript languages only and use shades , should be more colourful , i want like web3 model page
