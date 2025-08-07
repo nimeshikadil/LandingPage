@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,7 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #2e373f;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2e373f 50%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 25%, #f8f8f8 50%, #fafafa 75%, #ffffff 100%);
             overflow-x: hidden;
         }
 
@@ -28,16 +27,16 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, rgba(46, 55, 63, 0.95) 0%, rgba(173, 217, 41, 0.1) 100%);
-            backdrop-filter: blur(10px);
-            color: white;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 250, 250, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            color: #2e373f;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(173, 217, 41, 0.2);
-            border-bottom: 1px solid rgba(173, 217, 41, 0.3);
+            box-shadow: 0 2px 25px rgba(46, 55, 63, 0.08);
+            border-bottom: 1px solid rgba(173, 217, 41, 0.1);
         }
 
         nav {
@@ -49,10 +48,15 @@
         .logo {
             font-size: 2rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #add929, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             text-shadow: 0 0 20px rgba(173, 217, 41, 0.3);
+        }
+        
+        .logo .crowd {
+            color: #2e373f;
+        }
+        
+        .logo .snap {
+            color: #add929;
         }
 
         .nav-links {
@@ -62,7 +66,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #2e373f;
             text-decoration: none;
             transition: all 0.3s;
             position: relative;
@@ -80,7 +84,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(45deg, #add929, #ffffff);
+            background: linear-gradient(45deg, #add929, #2e373f);
             transition: width 0.3s;
         }
 
@@ -97,14 +101,14 @@
         .mobile-menu span {
             width: 25px;
             height: 3px;
-            background: linear-gradient(45deg, #add929, #ffffff);
+            background: linear-gradient(45deg, #add929, #2e373f);
             margin: 3px 0;
             transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2e373f 50%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
             height: 100vh;
             display: flex;
             align-items: center;
@@ -119,7 +123,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 30%, rgba(173, 217, 41, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(173, 217, 41, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
@@ -134,15 +138,12 @@
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: 4rem;
             margin-bottom: 1rem;
-            padding-top: 2rem;
-            background: linear-gradient(45deg, #ffffff, #add929, #ffffff);
+            background: linear-gradient(45deg, #2e373f, #add929, #2e373f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: fadeInUp 1s ease-out;
-            line-height: 1.2;
         }
 
         .hero-text .subtitle {
@@ -152,36 +153,207 @@
             animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        .hero-image {
+        .hero-benefits {
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #2e373f;
+        }
+
+        .checkmark {
+            color: #add929;
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .hero-dashboard {
             position: relative;
-            text-align: center;
-            min-height: 400px;
-            background: 
-                url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'),
-                url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'),
-                linear-gradient(135deg, #add929 0%, #2e373f 100%);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            padding: 2rem;
+        }
+
+        .dashboard-mockup {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 245, 255, 0.9) 100%);
             border-radius: 20px;
-            overflow: hidden;
+            padding: 1.5rem;
             box-shadow: 0 20px 60px rgba(173, 217, 41, 0.2);
-            border: 2px solid rgba(173, 217, 41, 0.3);
+            border: 1px solid rgba(173, 217, 41, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-image::before {
-            content: '';
+        .dashboard-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .nav-item.active {
+            color: #2e373f;
+            font-weight: bold;
+            border-bottom: 2px solid #add929;
+            padding-bottom: 0.5rem;
+        }
+
+        .dashboard-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+            height: 300px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-card {
+            grid-row: span 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-placeholder {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-line {
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, #add929, #2196f3);
+            position: relative;
+        }
+
+        .chart-dots {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(173, 217, 41, 0.1) 0%, rgba(46, 55, 63, 0.3) 100%);
-            animation: float 3s ease-in-out infinite;
+            display: flex;
+            gap: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
-        .hero-image::after {
-            content: '';
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #add929;
+        }
+
+        .event-card {
+            color: #2e373f;
+        }
+
+        .event-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .event-header h3 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .register-btn {
+            background: #add929;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .event-details {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .event-image {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #add929, #2196f3);
+            border-radius: 8px;
+        }
+
+        .event-info p {
+            margin: 0.2rem 0;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .assistant-card {
+            background: linear-gradient(135deg, #2e373f, #1a1a1a);
+            color: white;
+        }
+
+        .assistant-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .assistant-message p {
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .assistant-btn {
+            background: #add929;
+            color: #2e373f;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .floating-notification {
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #2e373f;
+            border: 1px solid rgba(173, 217, 41, 0.3);
         }
 
         .cta-buttons {
@@ -202,8 +374,8 @@
         }
 
         .cta-primary {
-            background: linear-gradient(45deg, #add929, #ffffff);
-            color: #2e373f;
+            background: linear-gradient(45deg, #add929, #2e373f);
+            color: white;
             box-shadow: 0 10px 30px rgba(173, 217, 41, 0.3);
         }
 
@@ -221,8 +393,8 @@
         /* About Section */
         .about {
             padding: 80px 0;
-            background: linear-gradient(135deg, #2e373f 0%, #1a1a1a 100%);
-            color: white;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            color: #2e373f;
             position: relative;
         }
 
@@ -233,7 +405,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 30% 20%, rgba(173, 217, 41, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 70% 80%, rgba(173, 217, 41, 0.03) 0%, transparent 50%);
         }
@@ -242,7 +414,7 @@
             text-align: center;
             font-size: 3rem;
             margin-bottom: 2rem;
-            background: linear-gradient(45deg, #ffffff, #add929);
+            background: linear-gradient(45deg, #2e373f, #add929);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -253,13 +425,13 @@
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 3rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(46, 55, 63, 0.9);
         }
 
         /* Features Section */
         .features {
             padding: 80px 0;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2e373f 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
             position: relative;
         }
 
@@ -271,13 +443,13 @@
         }
 
         .feature-card {
-            background: linear-gradient(135deg, rgba(46, 55, 63, 0.8) 0%, rgba(26, 26, 26, 0.8) 100%);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 250, 0.9) 100%);
+            backdrop-filter: blur(15px);
             padding: 2.5rem;
             border-radius: 20px;
             text-align: left;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(173, 217, 41, 0.2);
+            box-shadow: 0 10px 40px rgba(46, 55, 63, 0.08);
+            border: 1px solid rgba(173, 217, 41, 0.15);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -312,15 +484,15 @@
         }
 
         .feature-card p {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(46, 55, 63, 0.8);
             line-height: 1.6;
         }
 
         /* Benefits Section */
         .benefits {
             padding: 80px 0;
-            background: linear-gradient(135deg, #2e373f 0%, #1a1a1a 100%);
-            color: white;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            color: #2e373f;
         }
 
         .benefits-grid {
@@ -357,9 +529,9 @@
         /* CTA Section */
         .final-cta {
             padding: 80px 0;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2e373f 50%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 50%, #ffffff 100%);
             text-align: center;
-            color: white;
+            color: #2e373f;
             position: relative;
         }
 
@@ -370,14 +542,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 50% 50%, rgba(173, 217, 41, 0.1) 0%, transparent 70%);
         }
 
         .final-cta h2 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #add929, #ffffff);
+            background: linear-gradient(45deg, #2e373f, #add929, #2e373f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -385,13 +557,13 @@
         .final-cta p {
             font-size: 1.3rem;
             margin-bottom: 3rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(46, 55, 63, 0.9);
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
-            color: rgba(255, 255, 255, 0.7);
+            background: #f8f8f8;
+            color: rgba(46, 55, 63, 0.7);
             text-align: center;
             padding: 2rem 0;
             border-top: 1px solid rgba(173, 217, 41, 0.2);
@@ -499,6 +671,213 @@
             box-shadow: 0 5px 20px rgba(173, 217, 41, 0.3);
         }
 
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            color: #2e373f;
+        }
+
+        .solution-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #add929;
+            margin-bottom: 3rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-item {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 250, 0.9) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(173, 217, 41, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .solution-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(173, 217, 41, 0.4);
+            box-shadow: 0 10px 30px rgba(173, 217, 41, 0.2);
+        }
+
+        .solution-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-item h3 {
+            color: #add929;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .solution-item p {
+            color: rgba(46, 55, 63, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Platform Highlights */
+        .platform-highlights {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            color: #2e373f;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(173, 217, 41, 0.1) 0%, rgba(46, 55, 63, 0.3) 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(173, 217, 41, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(173, 217, 41, 0.3);
+        }
+
+        .highlight-image {
+            margin-bottom: 1.5rem;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(173, 217, 41, 0.2) 0%, transparent 100%);
+            border-radius: 15px;
+        }
+
+        .highlight-image div {
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+
+        .highlight-card h3 {
+            color: #add929;
+            margin-bottom: 1rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            color: #2e373f;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #add929, #2e373f);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            box-shadow: 0 5px 20px rgba(173, 217, 41, 0.3);
+        }
+
+        .step h3 {
+            color: #add929;
+            margin-bottom: 0.5rem;
+        }
+
+        .step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -1rem;
+            top: 30px;
+            color: rgba(173, 217, 41, 0.5);
+            font-size: 2rem;
+        }
+
+        /* CrowdSnap in Action */
+        .crowdsnap-action {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            color: #2e373f;
+        }
+
+        .action-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .action-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .action-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(173, 217, 41, 0.2);
+        }
+
+        .action-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .action-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(232, 245, 232, 0.95));
+            padding: 2rem;
+            color: #2e373f;
+        }
+
+        .action-overlay h3 {
+            color: #add929;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Enhanced Benefits */
+        .benefit p {
+            color: rgba(46, 55, 63, 0.7);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
         /* Particle background */
         .particles {
             position: fixed;
@@ -528,6 +907,32 @@
                 opacity: 1;
             }
         }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                flex-direction: column;
+            }
+
+            .step:not(:last-child)::after {
+                content: '↓';
+                right: auto;
+                top: auto;
+                bottom: -1rem;
+            }
+
+            .action-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -537,12 +942,12 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">CrowdSnap</div>
+            <div class="logo"><span class="crowd">Crowd</span><span class="snap">Snap</span></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#highlights">Platform</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#cta">Get Started</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMobileMenu()">
@@ -558,108 +963,240 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>A smarter way to run every event, start to finish.</h1>
-                    <p class="subtitle">AI-powered event management built for today's organizers.</p>
+                    <h1>Smart tech for better events</h1>
+                    <p class="subtitle">AI-powered event management that helps you:</p>
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Streamline registration & check-ins</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Engage attendees effectively</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Track participation and ROI</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Gain real-time insights</span>
+                        </div>
+                    </div>
                     <div class="cta-buttons">
-                        <a href="#cta" class="cta-button cta-primary">Try It Free</a>
-                        <a href="#about" class="cta-button cta-secondary">Learn More</a>
+                        <a href="#cta" class="cta-button cta-primary">Explore the platform</a>
+                        <a href="#cta" class="cta-button cta-secondary">Request a demo ></a>
                     </div>
                 </div>
-                <div class="hero-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title fade-in">CrowdSnap – Your All in One Event Management Platform</h2>
-            <div class="about-content fade-in">
-                <p>CrowdSnap helps you manage every part of your event from registration to reporting—in one simple, powerful platform. No tech skills needed. No jumping between tools.</p>
-                <br>
-                <p><strong>Made for Event Organizers Like You</strong></p>
-                <p>Whether you're running a corporate event, seminar, expo, or workshop, CrowdSnap gives you the tools to stay organized, save time, and impress your attendees.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title fade-in">What You Can Do with CrowdSnap</h2>
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Manage Everything in One Place</h3>
-                    <p>Create forms, track attendees, manage sessions, and get reports all from one dashboard.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">📊</div>
-                    <h3>See What's Happening Live</h3>
-                    <p>Real-time dashboards show check-ins, footfall, and engagement as your event unfolds.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🤖</div>
-                    <h3>Save Time with Smart Automation</h3>
-                    <p>No more manual work. Let AI handle forms, reports, and more—fast and error-free.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🔗</div>
-                    <h3>Use Secure QR Codes & Blockchain</h3>
-                    <p>Track attendance and participation with secure, tamper-proof records.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">📝</div>
-                    <h3>Create Dynamic Forms</h3>
-                    <p>Handle complex registrations easily with forms that adjust to your event needs.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🎫</div>
-                    <h3>Print Custom ID Cards Instantly</h3>
-                    <p>Design and print branded QR-coded badges for every participant.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Stay Secure and Compliant</h3>
-                    <p>Your data is safe with us. CrowdSnap is fully GDPR and PDPA compliant.</p>
-                </div>
-                <div class="feature-card fade-in exhibition-showcase">
-                    <div class="exhibition-gallery">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Modern Exhibition Hall" />
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tech Conference" />
+                <div class="hero-dashboard">
+                    <div class="dashboard-mockup">
+                        <div class="dashboard-header">
+                            <div class="dashboard-nav">
+                                <span class="nav-item active">Dashboard</span>
+                                <span class="nav-item">Events</span>
+                                <span class="nav-item">Analytics</span>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-card chart-card">
+                                <div class="chart-placeholder">
+                                    <div class="chart-line"></div>
+                                    <div class="chart-dots">
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-card event-card">
+                                <div class="event-header">
+                                    <h3>Annual Summit</h3>
+                                    <span class="register-btn">Register now</span>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-image"></div>
+                                    <div class="event-info">
+                                        <p>Technology Summit</p>
+                                        <p>San Francisco</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-card assistant-card">
+                                <div class="assistant-header">
+                                    <span class="assistant-icon">🤖</span>
+                                    <span>Event Assistant</span>
+                                </div>
+                                <div class="assistant-message">
+                                    <p>Get expert technology advice & recommendations to save more!</p>
+                                    <button class="assistant-btn">View as a live recommendation</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-notification">
+                            <span class="notification-icon">😊</span>
+                            <span>Thanks for stopping by! Ready to take the next step?</span>
+                        </div>
                     </div>
-                    <h3>🏛️ Perfect for Exhibitions & Events</h3>
-                    <p>From tech conferences to trade shows, CrowdSnap handles events of all sizes with precision and style.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="benefits" class="benefits">
+    <!-- Solution Section -->
+    <section id="solution" class="solution">
         <div class="container">
-            <h2 class="section-title fade-in">Why Organizers Love CrowdSnap</h2>
-            <div class="benefits-grid">
-                <div class="benefit fade-in">
-                    <div class="benefit-icon">✨</div>
-                    <h3>Super Easy to Use</h3>
+            <h2 class="section-title fade-in">What CrowdSnap Offers</h2>
+            <p class="solution-subtitle fade-in">CrowdSnap is your complete solution for:</p>
+            <div class="solution-grid">
+                <div class="solution-item fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3>End-to-End Event Management</h3>
+                    <p>Handle registration, check-ins, session tracking, and reporting—all in one place.</p>
                 </div>
-                <div class="benefit fade-in">
-                    <div class="benefit-icon">⏰</div>
-                    <h3>Saves Hours of Admin Work</h3>
+                <div class="solution-item fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3>Real-Time Participation Tracking</h3>
+                    <p>Use secure QR codes to track every check-in, activity, and engagement point in real time.</p>
                 </div>
-                <div class="benefit fade-in">
-                    <div class="benefit-icon">📈</div>
-                    <h3>Gives Clear, Real-time Insights</h3>
+                <div class="solution-item fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3>Live Analytics Dashboards</h3>
+                    <p>Visualize attendance, footfall, and engagement as the event unfolds. Make quick decisions backed by data.</p>
                 </div>
-                <div class="benefit fade-in">
-                    <div class="benefit-icon">🎪</div>
-                    <h3>Helps Run Events More Smoothly</h3>
+                <div class="solution-item fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3>AI-Powered Automation</h3>
+                    <p>Create forms, generate reports, print ID cards, and segment attendees—automatically.</p>
                 </div>
-                <div class="benefit fade-in">
-                    <div class="benefit-icon">📏</div>
-                    <h3>Scales with Events of Any Size</h3>
+                <div class="solution-item fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3>Blockchain Verification</h3>
+                    <p>Ensure attendance records are tamper-proof, transparent, and audit-ready.</p>
+                </div>
+                <div class="solution-item fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3>Smart Questionnaires</h3>
+                    <p>Capture participant info through flexible forms that adapt to complex scenarios.</p>
+                </div>
+                <div class="solution-item fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3>Custom ID Generation</h3>
+                    <p>Instantly create branded participant badges with embedded QR codes.</p>
+                </div>
+                <div class="solution-item fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3>Security & Compliance</h3>
+                    <p>Fully GDPR & PDPA compliant with encrypted data and role-based access control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Highlights Section -->
+    <section id="highlights" class="platform-highlights">
+        <div class="container">
+            <h2 class="section-title fade-in">Platform Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card fade-in">
+                    <div class="highlight-image">
+                        <div class="placeholder-dashboard">📊</div>
+                    </div>
+                    <h3>Live Dashboard</h3>
+                    <p>Real-time event monitoring and analytics</p>
+                </div>
+                <div class="highlight-card fade-in">
+                    <div class="highlight-image">
+                        <div class="placeholder-tracking">👥</div>
+                    </div>
+                    <h3>Participant Tracking</h3>
+                    <p>Advanced QR-based attendance management</p>
+                </div>
+                <div class="highlight-card fade-in">
+                    <div class="highlight-image">
+                        <div class="placeholder-analytics">📈</div>
+                    </div>
+                    <h3>Live Analytics</h3>
+                    <p>Instant insights and engagement metrics</p>
+                </div>
+                <div class="highlight-card fade-in">
+                    <div class="highlight-image">
+                        <div class="placeholder-id">🆔</div>
+                    </div>
+                    <h3>ID Card Generator</h3>
+                    <p>Custom branded badges with QR codes</p>
+                </div>
+                <div class="highlight-card fade-in">
+                    <div class="highlight-image">
+                        <div class="placeholder-forms">📝</div>
+                    </div>
+                    <h3>Questionnaire Builder</h3>
+                    <p>Dynamic forms that adapt to your needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title fade-in">How It Works</h2>
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Set up your event</h3>
+                    <p>No code needed - get started in minutes</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Share registration forms</h3>
+                    <p>Collect participant data effortlessly</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Track check-ins via QR</h3>
+                    <p>Monitor activities in real-time</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>View live stats</h3>
+                    <p>Access dashboards and insights instantly</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">5</div>
+                    <h3>Export reports</h3>
+                    <p>Get comprehensive engagement summaries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CrowdSnap in Action Section -->
+    <section id="action" class="crowdsnap-action">
+        <div class="container">
+            <h2 class="section-title fade-in">CrowdSnap in Action</h2>
+            <div class="action-gallery">
+                <div class="action-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CrowdSnap powering a tech conference" />
+                    <div class="action-overlay">
+                        <h3>Tech Conferences</h3>
+                        <p>Seamless registration and networking</p>
+                    </div>
+                </div>
+                <div class="action-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CrowdSnap at business events" />
+                    <div class="action-overlay">
+                        <h3>Corporate Events</h3>
+                        <p>Professional event management</p>
+                    </div>
+                </div>
+                <div class="action-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CrowdSnap managing workshops" />
+                    <div class="action-overlay">
+                        <h3>Workshops & Seminars</h3>
+                        <p>Interactive learning experiences</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -672,9 +1209,9 @@
             <p class="fade-in">Join the growing number of event organizers who trust CrowdSnap.<br>
             Simplify your process. Engage better. Report smarter.</p>
             <div class="cta-buttons fade-in">
-                <a href="#" class="cta-button cta-primary" onclick="handleCTA('free')">Try It Free</a>
-                <a href="#" class="cta-button cta-secondary" onclick="handleCTA('team')">Talk to Our Team</a>
-                <a href="#" class="cta-button cta-secondary" onclick="handleCTA('demo')">Book a Demo</a>
+                <a href="#" class="cta-button cta-primary">Try It Free</a>
+                <a href="#" class="cta-button cta-secondary">Talk to Our Team</a>
+                <a href="#" class="cta-button cta-secondary">Book a Demo</a>
             </div>
         </div>
     </section>
